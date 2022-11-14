@@ -20,7 +20,7 @@ for (let i = 0; i < close.length; i++) {
     if (div) {
       div.style.display = "none";
     }
-  }
+  });
 }
 
 // Add a "checked" symbol when clicking on a list item
@@ -34,7 +34,7 @@ if (list) {
   }, false);
 }
 // Create a new list item when clicking on the "Add" button
-function newElement() {
+function newElement(): void {
   const li: HTMLElement = document.createElement("li");
   const input: HTMLInputElement = <HTMLInputElement>document.getElementById("myInput");
   const inputValue: string = input.value;
@@ -65,6 +65,6 @@ function newElement() {
       if (div) {
         div.style.display = "none";
       }
-    }}
-}
+    });
+  }
 }
