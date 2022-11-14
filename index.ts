@@ -20,7 +20,6 @@ for (let i = 0; i < close.length; i++) {
     if (div) {
       div.style.display = "none";
     }
-
   }
 }
 
@@ -46,10 +45,10 @@ function newElement() {
     alert("You must write something!");
   } else {
     if (myUl) {
-    myUl.appendChild(li);
+      myUl.appendChild(li);
     }
   }
-  const input = document.getElementById("myInput");
+  // const input = document.getElementById("myInput");
   if (!input) {
     return
   }
@@ -60,9 +59,12 @@ function newElement() {
   li.appendChild(span);
 
   for (let i = 0; i < close.length; i++) {
-    close[i].onclick = function () {
-      let div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
+    const closeBtn: Element = close[i];
+    closeBtn.addEventListener('click', () => {
+      let div = closeBtn.parentElement;
+      if (div) {
+        div.style.display = "none";
+      }
+    }}
+}
 }
