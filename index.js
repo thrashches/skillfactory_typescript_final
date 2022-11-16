@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // Create a "close" button and append it to each list item
-const myNodelist = document.getElementsByTagName("LI");
-for (let i = 0; i < myNodelist.length; i++) {
-    let span = document.createElement("SPAN");
+const myNodelist = document.getElementsByTagName("li");
+let i;
+for (i = 0; i < myNodelist.length; i++) {
+    let span = document.createElement("span");
     let txt = document.createTextNode("\u00D7");
     span.className = "close";
     span.appendChild(txt);
@@ -11,7 +12,7 @@ for (let i = 0; i < myNodelist.length; i++) {
 }
 // Click on a close button to hide the current list item
 const close = document.getElementsByClassName("close");
-for (let i = 0; i < close.length; i++) {
+for (i = 0; i < close.length; i++) {
     let closeBtn = close[i];
     closeBtn.addEventListener('click', () => {
         const div = closeBtn.parentElement;
@@ -55,7 +56,7 @@ function newElement() {
     span.className = "close";
     span.appendChild(txt);
     li.appendChild(span);
-    for (let i = 0; i < close.length; i++) {
+    for (i = 0; i < close.length; i++) {
         const closeBtn = close[i];
         closeBtn.addEventListener('click', () => {
             let div = closeBtn.parentElement;

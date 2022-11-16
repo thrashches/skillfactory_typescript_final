@@ -1,9 +1,9 @@
-export { };
+export {};
 // Create a "close" button and append it to each list item
-const myNodelist: HTMLCollectionOf<Element> = document.getElementsByTagName("LI");
-
-for (let i = 0; i < myNodelist.length; i++) {
-  let span: HTMLElement = document.createElement("SPAN");
+const myNodelist: HTMLCollectionOf<Element> = document.getElementsByTagName("li");
+let i;
+for (i = 0; i < myNodelist.length; i++) {
+  let span: HTMLElement = document.createElement("span");
   let txt: Text = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
@@ -13,7 +13,7 @@ for (let i = 0; i < myNodelist.length; i++) {
 // Click on a close button to hide the current list item
 const close: HTMLCollectionOf<Element> = document.getElementsByClassName("close");
 
-for (let i = 0; i < close.length; i++) {
+for (i = 0; i < close.length; i++) {
   let closeBtn: Element = close[i];
   closeBtn.addEventListener('click', () => {
     const div: HTMLElement | null = closeBtn.parentElement;
@@ -58,7 +58,7 @@ function newElement(): void {
   span.appendChild(txt);
   li.appendChild(span);
 
-  for (let i = 0; i < close.length; i++) {
+  for (i = 0; i < close.length; i++) {
     const closeBtn: Element = close[i];
     closeBtn.addEventListener('click', () => {
       let div = closeBtn.parentElement;
